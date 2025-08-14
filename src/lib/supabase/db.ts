@@ -1,7 +1,7 @@
 import {drizzle} from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import * as dotenv from 'dotenv';
-import * as schema from '../../../migrations/schema';
+import * as schema from './schema';
 import { migrate } from 'drizzle-orm/postgres-js/migrator';
 
 dotenv.config({path: '.env'});
@@ -24,7 +24,7 @@ const migrateDb = async () => {
     try {
         console.log('Migrating database...');
     await migrate(db, {
-        migrationsFolder: './migrations',
+        migrationsFolder: '../../../migrations',
     });
     console.log('Database migration completed.');    
     }
