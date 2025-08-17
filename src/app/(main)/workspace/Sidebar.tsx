@@ -1,22 +1,51 @@
 "use client";
 
-import { SidebarIcon } from 'lucide-react'
+import { Home, SidebarIcon } from 'lucide-react'
 import React, { useState } from 'react'
 
 const Sidebar = () => {
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-  return (
-      <div className={!sidebarCollapsed ? `w-64 h-screen bg-[#f8f8f7] p-4 border-r-2 border-gray-200`: `w-0 h-screen bg-white p-4`}>
-        <div className='mb-4 block'>
-        <h1 className='text-2xl font-bold'>
-          Workspace
-        </h1>
+  const toggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed);
+  }
 
-        <SidebarIcon className='cursor-pointer' onClick={()=>setSidebarCollapsed(false)}></SidebarIcon>
+  return (
+      <div className='flex flex-col'>
+  
+      <nav className='px-4 py-2 bg-gray-200 flex w-svw'>
+       
+        <div className='flex w-80 justify-between'>
+           <h1 className='text-2xl'>Workspace</h1>
+
+        <button onClick={toggleSidebar} className='ml-4 cursor-pointer'>
+          <SidebarIcon className='w-6 h-6' />
+        </button>
+
         </div>
+
+      </nav>
+
+      <div className={`h-full bg-gray-100 transition-transform duration-300 ${sidebarCollapsed ? 'translate-x-[-100%]' : 'translate-x-0'} w-80`}>
+        <div className='p-4'>
+          <h2 className='text-xl font-bold'>Totally Skewed's Flowtion</h2>
+          <ul className='mt-4 space-y-2'>
+           <li className='flex'>
+            <Home></Home>
+            Home
+
+           </li>
+
+          </ul>
         </div>
+    </div>
+
+
+
+
+
+      </div>
 
 
   )
