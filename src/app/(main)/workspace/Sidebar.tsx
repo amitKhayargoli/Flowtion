@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
       <div className='flex flex-col'>
   
-      <nav className='px-4 py-2 bg-gray-200 flex w-svw'>
+      <nav className='px-4 py-2 bg-[#f9f8f7] flex w-svw border-b border-[#e0dfde] items-center justify-between'>
        
         <div className='flex w-80 justify-between'>
            <h1 className='text-2xl'>Workspace</h1>
@@ -27,11 +27,11 @@ const Sidebar = () => {
 
       </nav>
 
-      <div className={`h-full bg-gray-100 transition-transform duration-300 ${sidebarCollapsed ? 'translate-x-[-100%]' : 'translate-x-0'} w-80`}>
+      <div className={`h-full bg-[#f9f8f7] transition-transform duration-300 ${sidebarCollapsed ? 'translate-x-[-100%]' : 'translate-x-0'} w-80`}>
         <div className='p-4'>
           <h2 className='text-xl font-bold'>Totally Skewed's Flowtion</h2>
           <ul className='mt-4 space-y-2'>
-           <li className='flex'>
+           <li className='flex hover:bg-[#f1f0ef]'>
             <Home></Home>
             Home
 
